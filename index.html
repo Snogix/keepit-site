@@ -3,73 +3,384 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Keepit — Support</title>
-<meta name="description" content="Support for Keepit, the home maintenance and receipt/warranty tracker for iPhone.">
-<style>
-  :root {
-    --bg: #ffffff; --fg: #1a1a1a; --muted: #555; --card: #f5f5f4;
-    --accent: #2f6b4f; --border: #e2e2e0;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg: #131313; --fg: #ececec; --muted: #a0a0a0; --card: #1e1e1e;
-            --accent: #6fbf94; --border: #2c2c2c; }
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: var(--bg); color: var(--fg);
-         font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-  main { max-width: 640px; margin: 0 auto; padding: 3rem 1.25rem 4rem; }
-  h1 { font-size: 2rem; margin-bottom: .25rem; }
-  .tagline { color: var(--muted); margin-bottom: 2rem; }
-  h2 { font-size: 1.15rem; margin: 2rem 0 .5rem; color: var(--accent); }
-  p { margin-bottom: .75rem; }
-  .card { background: var(--card); border: 1px solid var(--border);
-          border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 1rem; }
-  .card h3 { font-size: 1rem; margin-bottom: .35rem; }
-  .card p { margin-bottom: 0; color: var(--muted); }
-  a { color: var(--accent); }
-  footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border);
-           color: var(--muted); font-size: .9rem; }
-</style>
+
+<title>Keepit — Home Maintenance &amp; Receipt Warranty Tracker for iPhone</title>
+<meta name="description" content="Keepit tracks your receipts, return windows, warranty expiry dates and home maintenance tasks on iPhone — and reminds you before each deadline. Everything stays in your own iCloud. Free to start.">
+<link rel="canonical" href="https://snogix.github.io/keepit-site/">
+
+<meta name="apple-itunes-app" content="app-id=6780991390">
+<meta name="theme-color" content="#1b2a4a">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Keepit">
+<meta property="og:title" content="Keepit — Home &amp; Receipt Tracker for iPhone">
+<meta property="og:description" content="Snap a receipt, set it, and Keepit reminds you before the return window closes or the warranty runs out. Your data stays in your own iCloud.">
+<meta property="og:url" content="https://snogix.github.io/keepit-site/">
+<meta property="og:image" content="https://snogix.github.io/keepit-site/assets/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Keepit — Home &amp; Receipt Tracker for iPhone">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Keepit — Home &amp; Receipt Tracker for iPhone">
+<meta name="twitter:description" content="Never miss a return window, warranty expiry, or furnace filter again.">
+<meta name="twitter:image" content="https://snogix.github.io/keepit-site/assets/img/og-image.png">
+
+<link rel="icon" href="assets/img/icon-192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="assets/img/icon-180.png">
+<link rel="stylesheet" href="assets/css/site.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Keepit: Home & Receipt Tracker",
+      "operatingSystem": "iOS 17.0 or later",
+      "applicationCategory": "ProductivityApplication",
+      "url": "https://apps.apple.com/app/id6780991390",
+      "downloadUrl": "https://apps.apple.com/app/id6780991390",
+      "image": "https://snogix.github.io/keepit-site/assets/img/icon-512.png",
+      "description": "Keepit tracks receipts, return windows, warranty expiry dates and recurring home maintenance tasks on iPhone, with reminders before every deadline. All data is stored in the user's own iCloud account.",
+      "offers": [
+        { "@type": "Offer", "price": "0", "priceCurrency": "CAD", "name": "Free" },
+        { "@type": "Offer", "price": "4.99", "priceCurrency": "CAD", "name": "Keepit Pro (one-time)" }
+      ],
+      "author": {
+        "@type": "Organization",
+        "name": "Old Guard Technology",
+        "url": "https://snogix.github.io/keepit-site/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Where is my data stored?",
+          "acceptedAnswer": { "@type": "Answer", "text": "On your iPhone and in your own private iCloud account. Keepit has no servers and no accounts, so nobody else - including us - can see your receipts or tasks." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Keepit work without an internet connection?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Everything is stored on your device first. iCloud sync and backup happen whenever you are back online." }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does Keepit cost?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Keepit is free for up to 5 receipts and 5 home tasks. Keepit Pro removes both limits for a single one-time purchase of $4.99 CAD - there is no subscription." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Keepit read my receipts automatically?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Photograph a receipt and Keepit uses on-device text recognition to pull out the store name, date and total. The scanning happens entirely on your iPhone - no image is ever uploaded." }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens to my data if I get a new phone?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Install Keepit and sign in to the same Apple Account. Your receipts and tasks sync back down from iCloud automatically within a few minutes." }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
-<main>
-  <h1>Keepit</h1>
-  <p class="tagline">Home maintenance &amp; receipt/warranty tracker for iPhone — your data stays in your iCloud.</p>
+<a class="skip" href="#main">Skip to content</a>
 
-  <h2>Frequently asked questions</h2>
+<header class="site-header">
+  <div class="wrap-wide">
+    <a class="brand" href="./">
+      <img src="assets/img/icon-192.png" alt="" width="28" height="28">
+      Keepit
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="#features">Features</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#pricing">Pricing</a>
+      <a href="guides/">Guides</a>
+      <a href="support/">Support</a>
+    </nav>
+  </div>
+</header>
 
-  <div class="card">
-    <h3>Where is my data stored?</h3>
-    <p>On your device and in your personal iCloud account. Keepit has no servers and we can never see your receipts or tasks. See our <a href="privacy/">privacy policy</a>.</p>
+<main id="main">
+
+  <!-- ================= HERO ================= -->
+  <div class="hero">
+    <div class="wrap-wide hero-grid">
+      <div>
+        <h1>Never miss a return window or warranty again.</h1>
+        <p class="lede">
+          Keepit is two trackers in one iPhone app: a place to keep receipts with
+          their return and warranty dates, and a simple checklist for the home jobs
+          that are easy to forget. It reminds you before each deadline — and
+          everything stays in your own iCloud.
+        </p>
+        <div class="btn-row">
+          <a class="btn" href="https://apps.apple.com/app/id6780991390">Download on the App Store</a>
+          <span class="price-note">Free to start · No account · No ads</span>
+        </div>
+      </div>
+      <div>
+        <img class="hero-shot" src="assets/img/01-receipt-list.webp"
+             width="900" height="1947" fetchpriority="high"
+             alt="The Keepit receipts screen, listing a furnace, refrigerator, TV and range with prices and return status.">
+      </div>
+    </div>
   </div>
 
-  <div class="card">
-    <h3>I got a new phone — how do I get my data back?</h3>
-    <p>Install Keepit and sign in to the same Apple Account (iCloud). Your receipts and tasks sync back automatically within a few minutes.</p>
-  </div>
+  <!-- ================= FEATURES ================= -->
+  <section id="features" class="section-alt">
+    <div class="wrap-wide">
+      <h2>What Keepit keeps track of</h2>
+      <p class="section-lede">
+        Two things every homeowner loses track of, in one app that does not need a
+        spreadsheet, a shoebox, or a subscription.
+      </p>
 
-  <div class="card">
-    <h3>I bought Keepit Pro but it shows as locked.</h3>
-    <p>Open Keepit → Settings → <strong>Restore Purchases</strong>. Make sure you're signed in with the same Apple Account you bought it with.</p>
-  </div>
+      <div class="features">
+        <div class="feature">
+          <div class="ico" aria-hidden="true">🧾</div>
+          <h3>Receipts that read themselves</h3>
+          <p>Photograph a receipt and Keepit pulls out the store, date and total
+             automatically using on-device text recognition. No typing, no upload.</p>
+        </div>
+        <div class="feature">
+          <div class="ico" aria-hidden="true">⏳</div>
+          <h3>Return windows</h3>
+          <p>Set the return period once — 14 days, 30 days, 90 days — and Keepit
+             tells you before it closes, while you can still take the thing back.</p>
+        </div>
+        <div class="feature">
+          <div class="ico" aria-hidden="true">🛡️</div>
+          <h3>Warranty expiry</h3>
+          <p>Track a one-year or five-year warranty alongside the receipt that
+             proves it. When something breaks, the proof of purchase is right there.</p>
+        </div>
+        <div class="feature">
+          <div class="ico" aria-hidden="true">🔁</div>
+          <h3>Recurring home tasks</h3>
+          <p>Furnace filters, smoke alarm batteries, gutters, water heater flushes.
+             Set the interval and the countdown restarts every time you mark it done.</p>
+        </div>
+        <div class="feature">
+          <div class="ico" aria-hidden="true">🔔</div>
+          <h3>Reminders that arrive in time</h3>
+          <p>Notifications the day before and the day of each deadline, so a warranty
+             never quietly expires in the background.</p>
+        </div>
+        <div class="feature">
+          <div class="ico" aria-hidden="true">☁️</div>
+          <h3>Backed up to your iCloud</h3>
+          <p>Lose your phone and nothing is lost. Install Keepit on the new one, sign
+             in, and every receipt comes back.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <div class="card">
-    <h3>Reminders aren't showing up.</h3>
-    <p>Check iOS Settings → Notifications → Keepit and make sure notifications are allowed. Keepit sends reminders at 10&nbsp;AM local time before tasks are due, return windows close, and warranties expire.</p>
-  </div>
+  <!-- ================= SCREENSHOTS ================= -->
+  <section>
+    <div class="wrap-wide">
+      <h2>A look inside</h2>
+      <p class="section-lede">Built to be quick — most things take one photo and two taps.</p>
 
-  <div class="card">
-    <h3>How do I delete all my data?</h3>
-    <p>Delete your items in the app, or remove Keepit's iCloud data in iOS Settings → your name → iCloud → Manage Account Storage. We hold no copies.</p>
-  </div>
+      <div class="shots">
+        <figure class="shot">
+          <img src="assets/img/01-receipt-list.webp" width="900" height="1947" loading="lazy"
+               alt="Receipt list showing purchases with prices and return status.">
+          <figcaption>Everything you own, with its dates</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="assets/img/05-warranty-return.webp" width="900" height="1947" loading="lazy"
+               alt="Editing a receipt to set a 14 day return window and a one year warranty.">
+          <figcaption>Set the return window and warranty</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="assets/img/02-proof-of-purchase-viewer.webp" width="900" height="1947" loading="lazy"
+               alt="Full screen receipt photo viewer showing a scanned store receipt.">
+          <figcaption>Proof of purchase, ready to show</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="assets/img/03-home-tasks.webp" width="900" height="1947" loading="lazy"
+               alt="Home maintenance task list showing sump pump, gutters and furnace filter jobs.">
+          <figcaption>The jobs that are easy to forget</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="assets/img/06-recurrence-picker.webp" width="900" height="1947" loading="lazy"
+               alt="Choosing how often a task repeats, in days, weeks, months or years.">
+          <figcaption>Repeat every week, month or year</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="assets/img/04-receipt-photo-rescan.webp" width="900" height="1947" loading="lazy"
+               alt="Rescanning the photo attached to a saved receipt.">
+          <figcaption>Rescan or replace a photo anytime</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
 
-  <h2>Contact</h2>
-  <p>Questions, bug reports, or feature ideas: <a href="mailto:keepit_support@oldguardtech.ca">keepit_support@oldguardtech.ca</a></p>
-  <p>We usually reply within a couple of business days.</p>
+  <!-- ================= PRIVACY ================= -->
+  <section id="privacy" class="section-alt">
+    <div class="wrap-wide">
+      <h2>Your receipts are nobody else's business</h2>
+      <p class="section-lede">
+        Receipts say a lot about a person — what you earn, what you buy, where you
+        shop. That is exactly why Keepit was built without a server to put them on.
+      </p>
 
-  <footer>
-    <p>Keepit is made by Old Guard Technology, Canada. · <a href="privacy/">Privacy Policy</a></p>
-  </footer>
+      <div class="callout">
+        <p><strong>There is no Keepit account, because there is no Keepit database.</strong>
+           Your receipts and tasks live on your iPhone and sync through your own
+           private iCloud, the same way your Photos do. We have no copy and no way
+           to get one.</p>
+        <p><strong>Receipt scanning happens on your phone.</strong> The text
+           recognition that reads the store name and total runs locally on your
+           device. Receipt images are never uploaded anywhere.</p>
+        <p><strong>No ads and no advertising trackers.</strong> Nothing about what
+           you buy is sold, shared, or profiled.</p>
+      </div>
+
+      <p><a href="privacy/">Read the full privacy policy →</a></p>
+    </div>
+  </section>
+
+  <!-- ================= PRICING ================= -->
+  <section id="pricing">
+    <div class="wrap-wide">
+      <h2>Buy it once, or don't buy it at all</h2>
+      <p class="section-lede">
+        A tracker you check a few times a month should not cost you every month.
+        Keepit is a one-time purchase — there is no subscription.
+      </p>
+
+      <div class="tiers">
+        <div class="tier">
+          <div class="amount">Free</div>
+          <div class="per">Forever, with limits</div>
+          <ul>
+            <li>Up to 5 receipts</li>
+            <li>Up to 5 home tasks</li>
+            <li>Automatic receipt scanning</li>
+            <li>Return &amp; warranty reminders</li>
+            <li>iCloud backup and sync</li>
+          </ul>
+        </div>
+        <div class="tier featured">
+          <div class="amount">$4.99 <span style="font-size:1rem;font-weight:500;">CAD</span></div>
+          <div class="per">Keepit Pro · one-time, not a subscription</div>
+          <ul>
+            <li>Unlimited receipts</li>
+            <li>Unlimited home tasks</li>
+            <li>Everything in Free</li>
+            <li>All future updates included</li>
+            <li>Restores free on your other devices</li>
+          </ul>
+        </div>
+      </div>
+
+      <p style="margin-top:1.5rem;">
+        <a class="btn" href="https://apps.apple.com/app/id6780991390">Get Keepit on the App Store</a>
+      </p>
+      <p class="price-note" style="margin-top:.75rem;">
+        Requires iPhone with iOS 17 or later. Price shown in Canadian dollars; the
+        App Store will show your local price.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section class="section-alt">
+    <div class="wrap">
+      <h2>Common questions</h2>
+      <div class="faq" style="margin-top:1.5rem;">
+
+        <details>
+          <summary>Where is my data stored?</summary>
+          <div class="body"><p>On your iPhone and in your own private iCloud account.
+            Keepit has no servers and no accounts, so nobody else — including us —
+            can see your receipts or tasks.</p></div>
+        </details>
+
+        <details>
+          <summary>Does Keepit work without an internet connection?</summary>
+          <div class="body"><p>Yes. Everything is stored on your device first.
+            iCloud sync and backup happen whenever you are back online.</p></div>
+        </details>
+
+        <details>
+          <summary>How much does Keepit cost?</summary>
+          <div class="body"><p>Keepit is free for up to 5 receipts and 5 home tasks.
+            Keepit Pro removes both limits for a single one-time purchase of $4.99 CAD.
+            There is no subscription and no recurring charge.</p></div>
+        </details>
+
+        <details>
+          <summary>Does Keepit read my receipts automatically?</summary>
+          <div class="body"><p>Yes. Photograph a receipt and Keepit uses on-device
+            text recognition to pull out the store name, date and total. The scanning
+            happens entirely on your iPhone — no image is ever uploaded. You can
+            always correct anything it gets wrong.</p></div>
+        </details>
+
+        <details>
+          <summary>What happens to my data if I get a new phone?</summary>
+          <div class="body"><p>Install Keepit and sign in to the same Apple Account.
+            Your receipts and tasks sync back down from iCloud automatically within a
+            few minutes.</p></div>
+        </details>
+
+        <details>
+          <summary>Is there an iPad or Android version?</summary>
+          <div class="body"><p>Keepit is iPhone-only today. iPad support is the next
+            major update. There is no Android version planned — Keepit relies on
+            iCloud and Apple's on-device text recognition to keep your data private.</p></div>
+        </details>
+
+      </div>
+      <p style="margin-top:1.5rem;">
+        More answers, plus how to reach a human, on the
+        <a href="support/">support page</a>.
+      </p>
+    </div>
+  </section>
+
 </main>
+
+<footer class="site-footer">
+  <div class="wrap-wide">
+    <div class="cols">
+      <div>
+        <h4>Keepit</h4>
+        <p>Home maintenance and receipt/warranty tracking for iPhone.
+           Made by Old Guard Technology in Canada.</p>
+      </div>
+      <div>
+        <h4>App</h4>
+        <ul>
+          <li><a href="https://apps.apple.com/app/id6780991390">App Store</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <ul>
+          <li><a href="guides/">Guides</a></li>
+          <li><a href="support/">Support</a></li>
+          <li><a href="privacy/">Privacy</a></li>
+          <li><a href="mailto:keepit_support@oldguardtech.ca">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <p>© 2026 Old Guard Technology. Keepit is not affiliated with Apple Inc.
+         App Store is a trademark of Apple Inc.</p>
+    </div>
+  </div>
+</footer>
 </body>
 </html>
