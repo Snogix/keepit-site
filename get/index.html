@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Opening the App Store — Keepit</title>
+<link rel="icon" href="../assets/img/icon-192.png" sizes="192x192">
+<link rel="stylesheet" href="../assets/css/site.css">
+<!-- Every App Store button on the site links here. The counter records this page load (that is the App Store tap),
+     then the visitor goes straight on to the App Store. The counter reports on load and again when the page is left. -->
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "0baf6ab7ef5d4351aaba33d0d373c29c"}'></script><!-- End Cloudflare Web Analytics -->
+<script>
+  (function () {
+    var store = 'https://apps.apple.com/app/id6780991390';
+    var gone = false;
+    function go() { if (!gone) { gone = true; location.replace(store); } }
+    window.addEventListener('load', function () { setTimeout(go, 300); });
+    setTimeout(go, 2500);   // if the load event is held up (slow network), go anyway
+  })();
+</script>
+<noscript><meta http-equiv="refresh" content="0; url=https://apps.apple.com/app/id6780991390"></noscript>
+</head>
+<body>
+<main id="main" style="max-width:32rem;margin:4rem auto;padding:0 16px;text-align:center">
+  <p>Opening Keepit on the App Store…</p>
+  <p><a class="btn" href="https://apps.apple.com/app/id6780991390">Tap here if nothing happens</a></p>
+</main>
+</body>
+</html>
